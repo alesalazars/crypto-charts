@@ -1,0 +1,130 @@
+/* General */
+html, body, #root, .App {height: 100%;}
+body, button, input{font-family: 'PT Sans', sans-serif;}
+.p-relative{position: relative;}
+
+/* Colors */
+.main-color{color:#272635;}
+.bg-grey{background-color:#f1f1f1;}
+
+/* Margins */
+
+/* Paddings */
+
+
+/* Texts */
+.f-light{font-weight: 300;}
+.f-normal{font-weight: 400;}
+.f-bold{font-weight: 700;}
+.f-black{font-weight: 900;}
+.f-uppercase{text-transform: uppercase;}
+
+/* Content */
+.index{
+  height: 100%;
+	display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.sidebar{
+  width: 300px;
+  padding: 0 50px;
+  height: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.logo{
+  padding: 10px 20px;
+  border: 1px solid #272635;
+  display: inline-block;
+  margin: 50px 0 0 0;
+  font-family: 'Oswald', sans-serif !important;
+  width: 200px;
+}
+.logo .f-bold{font-weight: 600;}
+
+
+.searchbar{
+  height: 50px;
+  margin-top: 30px;
+  font-size: 18px;
+  padding: 5px 20px 5px 40px;
+  background-color: #f0f0f0;
+  border: none;
+  width: 240px;
+}
+i.fa-search{
+  position: absolute;
+  top: 53px;
+  left: 15px;
+  font-size: 14px;
+}
+
+
+.coin-list{
+  margin: 30px 0 0 0;
+  border-left: 1px solid #272635;
+  list-style-type: none;
+  padding-left: 20px;
+  max-height: 100%;
+  overflow: auto;
+}
+.coin-list li{
+  color: #a7a7a7;
+  transition: ease 0.3s;
+  display: flex;
+  align-items: center;
+}
+.coin-list li:hover{
+  color:#272635;
+  cursor:pointer
+}
+.coin-list li img{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  vertical-align: middle;
+  border: 1px solid red;
+}
+.coin-list li i{
+  padding: 3px;
+  border: 1px solid #a7a7a7;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
+  font-size: 13px;
+  margin-right: 10px;;
+}
+.coin-list li:hover i{
+  border: 1px solid #272635;
+}
+.coin-list li p{margin: 10px 0;}
+
+
+.content{
+  flex: 1 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-height: 100%;
+  overflow: auto;
+  display: flex;
+}
+
+
+
+
+@media(max-width:480px){
+  .sidebar, .content{
+    width: 100%;
+    min-height: auto;
+    display: block;
+  }
+}

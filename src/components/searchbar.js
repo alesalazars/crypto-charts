@@ -4,7 +4,7 @@ import '../pages/index.css';
 const Searchbar = () => {
   return(
     <div className="p-relative">
-      <i class="fas fa-search"></i>
+      <i className="fas fa-search"></i>
       <input className="searchbar" type="text" placeholder="Buscar..."></input>
     </div>
   )

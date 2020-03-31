@@ -1,42 +1,26 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import Searchbar from '../components/searchbar';
-import CoinItem from '../components/coin-item';
+import AssetItem from '../components/asset-item';
+import { getAssets } from './functions';
 
 import './index.css';
 
 const Index = () => {
+
+  useEffect(() => {
+ 
+    getAssets()
+
+  }, [])
 
   return(
     <div className="index">
       <div className="sidebar">
         <h1 className="main-color logo f-uppercase"><span className="f-bold">Crypto</span><span className="f-light">Charts</span></h1>
         <Searchbar/>
-        <ul className="coin-list">
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
-          <CoinItem name={'Name of the coin'}/>
+        <ul className="asset-list">
+          <AssetItem name={'Name of the asset'}/>
         </ul>
       </div>
       <div className="content">

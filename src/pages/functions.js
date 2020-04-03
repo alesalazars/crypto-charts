@@ -1,7 +1,9 @@
 import React from 'react';
 
-const getAssets = async() => {
-  const response = await fetch('http://68.183.27.16/api/asset/assets',
+import AssetItem from '../components/asset-item';
+
+const getAssets = async(setAssets) => {
+  const response = await fetch('https://economicapp.io/api/asset/assets',
     {
       method: 'GET',
       headers:{
@@ -11,8 +13,27 @@ const getAssets = async() => {
   )
   const data = await response.json()
 
-  console.log('data ===> ', data)
+  console.log('data ===> ', data.results)
+
+  const assetArray = data.results
+  setAssets(assetArray)
 }
 
-export { getAssets };
+
+const listAssets = (assets) => {
+  let aux = []
+  for(let i = 0 ; i < assets.length ; i++){
+    aux.push(
+      <AssetItem key={assets[i].id} name={assets[i].name} symbol={assets[i].symbol}/>
+    )
+  }
+
+  return(
+    <ul className="asset-list">
+      {aux}
+    </ul>
+  )
+}
+
+export { getAssets, listAssets };
 

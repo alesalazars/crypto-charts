@@ -91,6 +91,14 @@ i.fa-search{
   vertical-align: middle;
   border: 1px solid red;
 }
+.asset-list li .symbol{
+  color:#fff;
+  background-color:red;
+  padding: 1px 4px;
+  border-radius: 2px;
+  font-weight: 700;
+  margin-right: 5px;
+}
 .asset-list li i{
   padding: 3px;
   border: 1px solid #a7a7a7;

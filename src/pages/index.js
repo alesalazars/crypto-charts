@@ -19,7 +19,7 @@ const Index = () => {
   return(
     <div className="index">
       <div className="sidebar">
-        <h1 className="main-color logo f-uppercase"><span className="f-bold">Crypto</span><span className="f-light">Charts</span></h1>
+        <h1 className="color-white bg-main logo f-uppercase color-white bg-main"><span className="f-bold">Crypto</span><span className="f-light">Charts</span></h1>
         <Searchbar/>
         { listAssets(assets) }
       </div>

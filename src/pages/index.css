@@ -4,10 +4,16 @@ body, button, input{font-family: 'PT Sans', sans-serif;}
 .p-relative{position: relative;}
 
 /* Colors */
-.main-color{color:#272635;}
-.bg-grey{background-color:#f1f1f1;}
+.color-main{color:#272635;}
+.color-secondary{color: #7D80DA;}
+.color-white{color: #fff;}
+
+.bg-grey{background-color:#f0f0f0;}
+.bg-main{background-color:#272635;}
+.bg-secondary{background-color:#7D80DA;}
 
 /* Margins */
+.my-10{margin-top: 10px; margin-bottom: 10px;}
 
 /* Paddings */
 
@@ -27,60 +33,51 @@ body, button, input{font-family: 'PT Sans', sans-serif;}
   flex-wrap: wrap;
 }
 .sidebar{
-  width: 300px;
-  padding: 0 50px;
+  width: 250px;
   height: 100%;
   max-height: 100%;
   display: flex;
   flex-direction: column;
+  border-right: 1px solid #f0f0f0;
 }
 
 
 .logo{
   padding: 10px 20px;
-  border: 1px solid #272635;
   display: inline-block;
-  margin: 50px 0 0 0;
+  margin: 0;
   font-family: 'Oswald', sans-serif !important;
-  width: 200px;
+  font-size: 34px;
 }
 .logo .f-bold{font-weight: 600;}
 
 
 .searchbar{
   height: 50px;
-  margin-top: 30px;
   font-size: 18px;
-  padding: 5px 20px 5px 40px;
-  background-color: #f0f0f0;
+  padding: 5px 23px 5px 40px;
   border: none;
-  width: 240px;
 }
 i.fa-search{
   position: absolute;
-  top: 53px;
+  top: 23px;
   left: 15px;
   font-size: 14px;
 }
 
 
 .asset-list{
-  margin: 30px 0 0 0;
-  border-left: 1px solid #272635;
+  margin: 10px 0 0 0;
   list-style-type: none;
   padding-left: 20px;
   max-height: 100%;
   overflow: auto;
 }
 .asset-list li{
-  color: #a7a7a7;
   transition: ease 0.3s;
   display: flex;
   align-items: center;
-}
-.asset-list li:hover{
-  color:#272635;
-  cursor:pointer
+  opacity: 0.7;
 }
 .asset-list li img{
   width: 20px;
@@ -92,28 +89,31 @@ i.fa-search{
   border: 1px solid red;
 }
 .asset-list li .symbol{
-  color:#fff;
-  background-color:red;
   padding: 1px 4px;
   border-radius: 2px;
   font-weight: 700;
   margin-right: 5px;
+  transition: ease 0.3s;
+  opacity: 0.7;
 }
 .asset-list li i{
   padding: 3px;
-  border: 1px solid #a7a7a7;
+  border: 1px solid #272635;
   border-radius: 50%;
   width: 15px;
   height: 15px;
   line-height: 15px;
   text-align: center;
   font-size: 13px;
-  margin-right: 10px;;
+  margin-right: 10px;
+  opacity: 0.7;
 }
-.asset-list li:hover i{
-  border: 1px solid #272635;
+.asset-list li:hover{
+  opacity: 1;
+  cursor:pointer
 }
-.asset-list li p{margin: 10px 0;}
+.asset-list li:hover i{opacity:1;}
+.asset-list li:hover .symbol{opacity:1;}
 
 
 .content{

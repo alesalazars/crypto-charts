@@ -5,7 +5,7 @@ const AssetItem = (props) => {
 
   let icon
   if(props.symbol){
-    icon = <p className="symbol">{props.symbol}</p>
+    icon = <p className="symbol color-white bg-secondary">{props.symbol}</p>
   }else{
     icon = <i className="fas fa-dollar-sign"></i>
   }
@@ -14,7 +14,7 @@ const AssetItem = (props) => {
     <li className="asset" key={props.key}>
       {/* <img src={props.src} alt={props.alt}/> */}
       {icon}
-      <p>{props.name}</p>
+      <p className="color-main my-10">{props.name}</p>
     </li>
   )
 }

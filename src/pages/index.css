@@ -16,6 +16,8 @@ body, button, input{font-family: 'PT Sans', sans-serif;}
 .my-10{margin-top: 10px; margin-bottom: 10px;}
 
 /* Paddings */
+.pl-0{padding-left: 0;}
+.px-20{padding-left: 20px;padding-right: 20px;}
 
 
 /* Texts */
@@ -69,7 +71,6 @@ i.fa-search{
 .asset-list{
   margin: 10px 0 0 0;
   list-style-type: none;
-  padding-left: 20px;
   max-height: 100%;
   overflow: auto;
 }

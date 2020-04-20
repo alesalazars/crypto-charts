@@ -1,9 +1,30 @@
-import React from 'react';
+import React from 'react'
 
-import AssetItem from '../components/asset-item';
+import AssetItem from '../components/asset-item'
 
-const getAssets = async(setAssets) => {
-  const response = await fetch('https://economicapp.io/api/asset/assets',
+
+const assetSearch = (event, query, setQuery, setAssets) => {
+
+  let lastValue = event.target.value
+  console.log('lastValue: ', lastValue)
+  setQuery(lastValue)
+
+  console.log('query: ', query)
+
+  setTimeout(() => {
+    if(query === lastValue){
+      console.log(`Consideraremos: ${lastValue}`)
+
+      getData(setAssets)
+
+    }
+  }, 3000)
+
+}
+
+
+const getData = async(setAssets) => {
+  const response = await fetch('https://economicapp.io/api/asset/assets/?limit=50&offset=0',
     {
       method: 'GET',
       headers:{
@@ -12,28 +33,21 @@ const getAssets = async(setAssets) => {
     }
   )
   const data = await response.json()
-
-  console.log('data ===> ', data.results)
-
-  const assetArray = data.results
-  setAssets(assetArray)
+  console.log('data ==> ', data)
+  setAssets(data)
 }
 
 
-const listAssets = (assets) => {
-  let aux = []
-  for(let i = 0 ; i < assets.length ; i++){
-    aux.push(
-      <AssetItem key={assets[i].id} name={assets[i].name} symbol={assets[i].symbol}/>
-    )
-  }
-
-  return(
-    <ul className="asset-list">
-      {aux}
-    </ul>
-  )
+const renderSearchResults = (assets, query) => {
+  assets.forEach(item => {
+    if(item.name === query){
+      // return
+      //   {AssetItem key={item.key}/}
+      console.log('wa')
+    }
+  })
 }
 
-export { getAssets, listAssets };
 
+
+export { assetSearch, renderSearchResults };

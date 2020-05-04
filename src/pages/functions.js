@@ -19,28 +19,10 @@ const getData = (q) => {
 }
 
 
-let lastValue = null
-
-// Define last inputted full value
-const defineInput = (val, query, setQuery) => {
-
-  lastValue = val
-  console.log('val: ', val)
-
-  setTimeout(() => {
-    if(lastValue === val){
-      console.log(`Consideraremos: ${val}`)
-      setQuery(val)
-      console.log('query es: ', query)
-    }
-  }, 3000)
-
-}
-
-
 // Return promise result from fetch
-const getAssets = (query) => {
-  const promise = getData(query)
+const getAssets = (q) => {
+  console.log('entre al fetch')
+  const promise = getData(q)
   promise.then(data => {
     console.log('data ==> ', data)
     // setAssets(data)
@@ -48,17 +30,10 @@ const getAssets = (query) => {
 }
 
 
-// Search assets
-const assetSearch = (event, query, setQuery) => {
-  let val = event.target.value
-  defineInput(val, query, setQuery)
-  getAssets(query)
-}
 
-
-// const renderSearchResults = (assets, query) => {
+// const renderSearchResults = (assets, q) => {
 //   assets.forEach(item => {
-//     if(item.name === query){
+//     if(item.name === q){
 //       // return
 //       //   {AssetItem key={item.key}/}
 //       console.log('wa')
@@ -67,4 +42,21 @@ const assetSearch = (event, query, setQuery) => {
 // }
 
 
-export { assetSearch };
+const assetSearch = (event, el) => {
+  var val = event.target.value
+  console.log('q1: ', el.state.q)
+  console.log('val1: ', val)
+  setTimeout(() => {
+    console.log('entre al timeout')
+    console.log('q: ', el.state.q)
+    console.log('val2: ', val)
+    if(el.state.q == val){
+      console.log('voy al fetch')
+      // getAssets(q)
+    }
+  }, 2000)
+  //setQ(val)
+  el.setState({'q': val})
+}
+
+export { getAssets, assetSearch };
